@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+    <%- include('../../partials/header'); %>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+    <header class="header navbar-area">
+        <!-- Start Topbar -->
+        <div class="topbar">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="top-left">
+                            <ul class="menu-top-link">
+                                <li>
+                                    <div class="select-position">
+                                        <select id="select4">
+                                            <option value="0" selected>$ USD</option>
+                                            <option value="1">€ EURO</option>
+                                            <option value="2">$ CAD</option>
+                                            <option value="3">₹ INR</option>
+                                            <option value="4">¥ CNY</option>
+                                            <option value="5">৳ BDT</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="select-position">
+                                        <select id="select5">
+                                            <option value="0" selected>English</option>
+                                            <option value="1">Español</option>
+                                            <option value="2">Filipino</option>
+                                            <option value="3">Français</option>
+                                            <option value="4">العربية</option>
+                                            <option value="5">हिन्दी</option>
+                                            <option value="6">বাংলা</option>
+                                        </select>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="top-middle">
+                            <ul class="useful-links">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="top-end">
+                            <!-- khi đăng nhập thành công thì xóa class hidden này -->
+                            <div class="user hidden" >
+                                <i class="lni lni-user"></i>
+                                Hello
+                            </div>
+                            <!--  -->
+
+                            <ul class="user-login <%if(user==null){%><%=user%><%}else{%>hidden<%};%>">
+                                <li >
+                                    <a href="/login">Sign In</a>
+                                </li>
+                                <li>
+                                    <a href="/register">Register</a>
+                                </li>
+                            </ul>
+                            <ul class="user-login <%if(user!=null){%><%=user%><%}else{%>hidden<%};%>">
+                                <li >
+                                    <a href="#">Hello, <%=user%></a>
+                                </li>
+                                <li >
+                                    <a href="/logout">Logout</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Topbar -->
+        <!-- Start Header Middle -->
+        <div class="header-middle">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-3 col-7">
+                        <!-- Start Header Logo -->
+                        <a class="navbar-brand" href="/">
+                            <img src="/images/logo/logo.svg" alt="Logo">
+                        </a>
+                        <!-- End Header Logo -->
+                    </div>
+                    <div class="col-lg-5 col-md-7 d-xs-none">
+                        <!-- Start Main Menu Search -->
+                        <div class="main-menu-search">
+                            <!-- navbar search start -->
+                            <div class="navbar-search search-style-5">
+                                <div class="search-select">
+                                    <div class="select-position">
+                                        <select id="select1">
+                                            <option value="1" selected>Product name</option>
+                                            <option value="2">Product type</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="search-input">
+                                    <input type="text" placeholder="Search">
+                                </div>
+                                <div class="search-btn">
+                                    <button><i class="lni lni-search-alt"></i></button>
+                                </div>
+                            </div>
+                            <!-- navbar search Ends -->
+                        </div>
+                        <!-- End Main Menu Search -->
+                    </div>
+                    <div class="col-lg-4 col-md-2 col-5">
+                        <div class="middle-right-area">
+                            <div class="nav-hotline">
+                                <i class="lni lni-phone"></i>
+                                <h3>Hotline:
+                                    <span>(+100) 123 456 7890</span>
+                                </h3>
+                            </div>
+                            <div class="navbar-cart">
+                                <div class="wishlist">
+                                    <a href="javascript:void(0)">
+                                        <i class="lni lni-heart"></i>
+                                        <span class="total-items">0</span>
+                                    </a>
+                                </div>
+                                <div class="cart-items">
+                                    <a href="javascript:void(0)" class="main-btn">
+                                        <i class="lni lni-cart"></i>
+                                        <span class="total-items">2</span>
+                                    </a>
+                                    <!-- Shopping Item -->
+                                    <div class="shopping-item">
+                                        <div class="dropdown-cart-header">
+                                            <span>2 Items</span>
+                                            <a href="cart.html">View Cart</a>
+                                        </div>
+                                        <ul class="shopping-list">
+                                            <li>
+                                                <a href="javascript:void(0)" class="remove" title="Remove this item"><i
+                                                        class="lni lni-close"></i></a>
+                                                <div class="cart-img-head">
+                                                    <a class="cart-img" href="./product-details.html"><img
+                                                            src="/images/header/cart-items/item1.jpg" alt="#"></a>
+                                                </div>
+
+                                                <div class="content">
+                                                    <h4><a href="./product-details.html">
+                                                            Apple Watch Series 6</a></h4>
+                                                    <p class="quantity">1x - <span class="amount">$99.00</span></p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)" class="remove" title="Remove this item"><i
+                                                        class="lni lni-close"></i></a>
+                                                <div class="cart-img-head">
+                                                    <a class="cart-img" href="./product-details.html"><img
+                                                            src="/images/header/cart-items/item2.jpg" alt="#"></a>
+                                                </div>
+                                                <div class="content">
+                                                    <h4><a href="./product-details.html">Wi-Fi Smart Camera</a></h4>
+                                                    <p class="quantity">1x - <span class="amount">$35.00</span></p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="bottom">
+                                            <div class="total">
+                                                <span>Total</span>
+                                                <span class="total-amount">$134.00</span>
+                                            </div>
+                                            <div class="button">
+                                                <a href="checkout.html" class="btn animate">Checkout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/ End Shopping Item -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Header Middle -->
+        <!-- Start Header Bottom -->
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-6 col-12">
+                    <div class="nav-inner">
+                        <!-- Start Mega Category Menu -->
+                        <div class="mega-category-menu">
+                            <span class="cat-button"><i class="lni lni-menu"></i>All Categories</span>
+                            <ul class="sub-category">
+                                <li><a href="./product-details.html">Electronics <i class="lni lni-chevron-right"></i></a>
+                                    <ul class="inner-sub-category">
+                                        <li><a href="./product-details.html">Digital Cameras</a></li>
+                                        <li><a href="./product-details.html">Camcorders</a></li>
+                                        <li><a href="./product-details.html">Camera Drones</a></li>
+                                        <li><a href="./product-details.html">Smart Watches</a></li>
+                                        <li><a href="./product-details.html">Headphones</a></li>
+                                        <li><a href="./product-details.html">MP3 Players</a></li>
+                                        <li><a href="./product-details.html">Microphones</a></li>
+                                        <li><a href="./product-details.html">Chargers</a></li>
+                                        <li><a href="./product-details.html">Batteries</a></li>
+                                        <li><a href="./product-details.html">Cables & Adapters</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="./product-details.html">accessories</a></li>
+                                <li><a href="./product-details.html">Televisions</a></li>
+                                <li><a href="./product-details.html">best selling</a></li>
+                                <li><a href="./product-details.html">top 100 offer</a></li>
+                                <li><a href="./product-details.html">sunglass</a></li>
+                                <li><a href="./product-details.html">watch</a></li>
+                                <li><a href="./product-details.html">man’s product</a></li>
+                                <li><a href="./product-details.html">Home Audio & Theater</a></li>
+                                <li><a href="./product-details.html">Computers & Tablets </a></li>
+                                <li><a href="./product-details.html">Video Games </a></li>
+                                <li><a href="./product-details.html">Home Appliances </a></li>
+                            </ul>
+                        </div>
+                        <!-- End Mega Category Menu -->
+                        <!-- Start Navbar -->
+                        <nav class="navbar navbar-expand-lg">
+                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a href="/" class="active" aria-label="Toggle navigation">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
+                                            data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
+                                            aria-expanded="false" aria-label="Toggle navigation">Pages</a>
+                                        <ul class="sub-menu collapse" id="submenu-1-2">
+                                            <li class="nav-item"><a href="/">Home</a></li>
+
+
+                                            <!-- chỉ dành cho user cho quyền admin. Khi có quyền admin thì xóa class hidden này đi -->
+                                            <li class="nav-item <%if(user!=null){%><%=user%><%}else{%>hidden<%};%>"><a href="/admin/manage-products">Manager Products</a></li>
+                                            <li class="nav-item <%if(user!=null){%><%=user%><%}else{%>hidden<%};%>" ><a href="/admin/create-product">CreateProduct</a></li>
+                                            <li class="nav-item <%if(user!=null){%><%=user%><%}else{%>hidden<%};%>" ><a href="/admin/manage-feedbacks">Manage Feedbacks</a></li>
+                                            <li class="nav-item <%if(user!=null){%><%=user%><%}else{%>hidden<%};%>" ><a href="/register">Register</a></li>
+                                            <!--   ------------------------------------------   -->
+
+
+                                            <li class="nav-item"><a href="/feedback">FeedBack</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <!-- chỉ dành cho user cho quyền admin. Khi có quyền admin thì xóa class <%if(user!=null){%><%=user%><%}else{%>hidden<%};%> này đi -->
+                                    <li class="nav-item <%if(user!=null){%><%=user%><%}else{%>hidden<%};%>">
+                                        <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
+                                            data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent"
+                                            aria-expanded="false" aria-label="Toggle navigation">Manager</a>
+                                        <ul class="sub-menu collapse" id="submenu-1-4">
+                                            <li class="nav-item"><a href="/admin/manage-products">Manager Product</a>
+                                            </li>
+                                            <li class="nav-item"><a href="/admin/create-product">Create Product</a></li>
+                                            <li class="nav-item"><a href="/admin/manage-feedbacks">Manage Feedbacks</a></li>
+                                        </ul>
+                                    </li>
+                                    <!--  -->
+
+                                    <li class="nav-item">
+                                        <a href="/feedback" aria-label="Toggle navigation">FeedBack</a>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse --><!-- navbar collapse -->
+                        </nav>
+                        <!-- End Navbar -->
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Start Nav Social -->
+                    <div class="nav-social">
+                        <h5 class="title">Follow Us:</h5>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><i class="lni lni-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><i class="lni lni-skype"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End Nav Social -->
+                </div>
+            </div>
+        </div>
+        <!-- End Header Bottom -->
+    </header>
+    <!-- End Header Area -->
+
+    <!-- Start Item Details -->
+    <section class="item-details section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Update Product</h2>
+                        <p>This is page update product</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-details-info">
+                <div class="single-block">
+                    <h4>Update Product</h4>
+                    <div class="row mt-3">
+                        <div>
+                            <form action="/products/update-product/submit" method="post">
+                                <div class="mb-3" style="display:none">
+                                    <input type="text" value="<%= editProduct.productID %>" name="productID" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" value="<%= editProduct.productName %>" name="productName" class="form-control" placeholder="Product Name">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="mb-1">Choose product type:</label>
+                                    <select class="form-select" name="productTypeID">
+                                        <% listProductTypes.forEach(function(productType) {
+                                            var selected = ( productType.productTypeID== editProduct.productTypeID) ? "selected" : ""; %>
+                                            <option value="<%= productType.productTypeID %>" <%= selected %>>
+                                                <%= productType.productTypeName %>
+                                            </option>
+                                        <% }); %> 
+                                    </select>
+                                </div>
+                                <div class="mb-3">         
+                                  <input type="text" class="form-control" value="<%= editProduct.salePrice %>" name="salePrice" placeholder="Product Price" >
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" name="description"  placeholder="Description" id="floatingTextarea"><%= editProduct.description %></textarea>
+                                </div>
+                                <div class="mt-2 text-center">
+                                    <button type="submit" class="btn btn-success me-3">Update</button>
+                                    <a href="/admin/manage-products" class="btn btn-primary">Back</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+        </div>   
+    </section>
+    <!-- End Item Details -->
+
+    <!-- Review Modal -->
+    <div class="modal fade review-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Leave a Review</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="review-name">Your Name</label>
+                                <input class="form-control" type="text" id="review-name" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="review-email">Your Email</label>
+                                <input class="form-control" type="email" id="review-email" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="review-subject">Subject</label>
+                                <input class="form-control" type="text" id="review-subject" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="review-rating">Rating</label>
+                                <select class="form-control" id="review-rating">
+                                    <option>5 Stars</option>
+                                    <option>4 Stars</option>
+                                    <option>3 Stars</option>
+                                    <option>2 Stars</option>
+                                    <option>1 Star</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="review-message">Review</label>
+                        <textarea class="form-control" id="review-message" rows="8" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer button">
+                    <button type="button" class="btn">Submit Review</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Review Modal -->
+    <%- include('../../partials/footer'); %>
+</body>
+
+</html>
