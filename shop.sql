@@ -45,12 +45,12 @@ INSERT INTO `products` (`productID`, `productName`, `productTypeID`, `productIma
 ('8', 'Xiaomi miband 5', '1', '/images/uploads/product-1.jpg', 106, 'This is my smart watch'),
 ('9', 'Xiaomi miband 5', '1', '/images/uploads/product-1.jpg', 95, 'This is my smart watch');
 
-CREATE TABLE `producttypes` (
+CREATE TABLE `productTypes` (
   `productTypeID` varchar(10) NOT NULL,
   `productTypeName` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `producttypes` (`productTypeID`, `productTypeName`) VALUES
+INSERT INTO `productTypes` (`productTypeID`, `productTypeName`) VALUES
 ('1', 'Smart Watch'),
 ('2', 'Smart Phone'),
 ('3', 'Smart Thing');
@@ -75,7 +75,7 @@ ALTER TABLE `feedback`
 ALTER TABLE `products`
   ADD PRIMARY KEY (`productID`);
 
-ALTER TABLE `producttypes`
+ALTER TABLE `productTypes`
   ADD PRIMARY KEY (`productTypeID`);
 
 ALTER TABLE `user`
