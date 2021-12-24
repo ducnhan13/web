@@ -4,15 +4,15 @@ exports.renderLogin = async (req, res) => {
   try {
     let user = req.session.user ? req.session.user : null;
 
-    res.render("pages/admin/login", { 
-      user, 
-    
+    res.render("pages/admin/login", {
+      user,
     });
   } catch (e) {
     console.log(e);
     res.json([]);
   }
 };
+
 exports.getInfo = async (req, res) => {
   try {
     var data = req.body;
@@ -20,27 +20,34 @@ exports.getInfo = async (req, res) => {
       userid: data.userid,
       userpassword: data.userpassword,
     };
-    console.log('user input: ',user);
-    
+    console.log("user input: ", user);
+
     let result = await LoginService.getInfo(user);
-    //console.log("User.userpassword = ",user.userpassword);
-    //console.log("Result[0].userpassword = ",result[0]);
-    /* Cau lenh dung - SQL Injection*/ 
-     if (user.userpassword == result[0].userpassword)  
-    // /*Cau lenh sai - SQL Injection*/ if (result.length > 0)  
-    {
+    // console.log("User.userpassword = ",user.userpassword);
+    // console.log("Result[0].userpassword = ",result[0]);
+
+    // Cau lenh sai - SQL Injection
+    // if (result.length > 0)
+
+    // Cau lenh dung - SQL Injection
+    if (user.userpassword == result[0].userpassword) {
       req.session.user = data.userid;
-      console.log('req session: ',req.session.user);
+      let csrfToken = Math.floor(Math.random() * 1000000000000000);
+      req.session.csrfToken = csrfToken.toString();
+      console.log("session token: ", req.session.csrfToken);
       // console.log("true");
+      res.cookie("username", data.userid);
+      res.cookie("password", data.userpassword);
       res.redirect("/");
     } else {
       console.log("error-login");
       res.render("pages/error-page");
     }
     // console.log(data.userpassword);
-    console.log('result: ',result);
+    console.log("result: ", result);
   } catch (e) {}
 };
+
 exports.Logout = async (req, res) => {
   try {
     req.session.destroy();
